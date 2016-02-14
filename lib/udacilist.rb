@@ -21,7 +21,11 @@ class UdaciList
   end
 
   def delete(index)
-    @items.delete_at(index - 1)
+    if index < @items.length
+      @items.delete_at(index - 1)
+    else # The number index could be only < items length
+      raise UdaciListErrors::IndexExceedsListSize, "#{index} isn't valid"
+    end
   end
 
   def all
