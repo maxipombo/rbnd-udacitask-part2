@@ -13,4 +13,5 @@ class TodoItem
     format_date(2) +
     format_priority
   end
+  
 end

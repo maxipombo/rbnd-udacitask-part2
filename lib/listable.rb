@@ -23,4 +23,8 @@ module Listable
     end
   end
 
+  def format_name
+    @site_name ? @site_name : ""
+  end
+
 end
