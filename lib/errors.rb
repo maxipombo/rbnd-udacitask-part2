@@ -1,3 +1,9 @@
 module UdaciListErrors
-  # Error classes go here
+
+  class InvalidItemType < StandardError
+  end
+
+  class ErrorName < StandardError
+  end
+
 end

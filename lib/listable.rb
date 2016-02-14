@@ -12,6 +12,7 @@ module Listable
     return value
   end
 
+# TodoItem requires formatting 1 date, EventItem could have up to 2 dates
   def format_date(number)
     if number == 1
       dates = @start_date.strftime("%D") if @start_date
