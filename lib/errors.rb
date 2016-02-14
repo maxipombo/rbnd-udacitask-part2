@@ -6,6 +6,9 @@ module UdaciListErrors
   class IndexExceedsListSize < StandardError
   end
 
+  class InvalidPriorityValue < StandardError
+  end
+
   class ErrorName < StandardError
   end
 
