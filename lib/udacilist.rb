@@ -29,9 +29,9 @@ class UdaciList
   end
 
   def all
-    puts "-" * @title.length
+    puts "-" * @title.to_s.length
     puts @title
-    puts "-" * @title.length
+    puts "-" * @title.to_s.length
     @items.each_with_index do |item, position|
       puts "#{position + 1}) #{item.details}"
     end
