@@ -1,10 +1,10 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
-Formatador
+
 2. Describe the 2 features you added to the project.
-  a) Feature 1... Update item's priority
-  b) Feature 2...
+  a) Feature 1: Update item's priority
+  b) Feature 2:
 
 # REFLECTIONS
 # -------------------------------------------------------
