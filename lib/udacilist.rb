@@ -39,20 +39,17 @@ class UdaciList
 
   # Filter by item type
   def filter(type)
-      type = type.downcase
-      case type
-        when "todo"
-          filtered_items = @items.select{|item| item.type == type}
-          return_filter(filtered_items)
-        when "event"
-          filtered_items = @items.select{|item| item.type == type}
-          return_filter(filtered_items)
-        when "link"
-          filtered_items = @items.select{|item| item.type == type}
-          return_filter(filtered_items)
-        else
-          raise UdaciListErrors::InvalidItemType, "Try 'todo', 'event' or 'link'"
-      end
+    type = type.downcase
+    if type == "todo"
+      filtered_items = items.select {|item| item.is_a?(TodoItem)}
+    elsif type == "event"
+      filtered_items = items.select {|item| item.is_a?(EventItem)}
+    elsif type == "link"
+      filtered_items = items.select {|item| item.is_a?(LinkItem)}
+    else
+      raise UdaciListErrors::InvalidItemType, "Try 'todo', 'event' or 'link'"
+    end
+    return_filter(filtered_items)
   end
 
   # Print the filtered items
@@ -61,7 +58,7 @@ class UdaciList
     puts (@title)
     puts "-" * @title.to_s.length
     filtered_items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details(position)}"
+      puts "#{position + 1}) #{item.details}"
     end
   end
 
