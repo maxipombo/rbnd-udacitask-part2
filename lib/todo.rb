@@ -1,6 +1,7 @@
 class TodoItem
   include Listable
-  attr_reader :description, :due, :priority
+  attr_reader :description, :due
+  attr_accessor :priority
 
   # Define priorities allowed
   @@priorities = ["high", "medium", "low", nil]
@@ -17,11 +18,6 @@ class TodoItem
     format_description + "due: " +
     format_date(2) +
     format_priority
-  end
-
-  # Add change priority module
-  def change_priority(priority)
-    @@priorities.include?(priority) ? (@priority = priority) : (raise UdaciListErrors::InvalidPriorityValue, "#{options[:priority]} isn't valid.")
   end
 
 end

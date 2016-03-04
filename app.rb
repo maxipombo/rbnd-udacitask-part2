@@ -47,3 +47,5 @@ new_list.all
 new_list.filter("event")
 
 # DEMO CHANGE PRIORITY
+new_list.change_priority(1,"high")
+new_list.all

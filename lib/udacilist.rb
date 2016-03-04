@@ -62,4 +62,10 @@ class UdaciList
     end
   end
 
+  # Add change priority module
+  def change_priority(index, priority)
+    raise UdaciListErrors::IncorrectItemType, "This item is not todo" unless @items[index-1].class.name.downcase.include? "todo"
+    @items[index-1].priority = priority
+  end
+
 end
