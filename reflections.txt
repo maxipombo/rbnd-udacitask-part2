@@ -16,9 +16,9 @@ About 12 hours including the time of research.
 The implementation of the filter by type.
 
 3. What two additional features did you build? Why?
-I think that we can add many features to this project but this two are essential
-update item's priority and change the title list. Change the title list only require
+I think that we can add many features to this project but these two are essential:
+updating item's priority and changing the title list. Changing the title list only requires
 change :title from attr_reader to attr_accessor on the UdaciList class!
 
 4. Where do you still have room to grow?
-I need a lot of practice to be more faster.
+I need a lot of practice to be faster.
