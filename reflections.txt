@@ -1,14 +1,24 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+Terminal-table for create a table for each list.
 
 2. Describe the 2 features you added to the project.
   a) Feature 1: Update item's priority
-  b) Feature 2:
+  b) Feature 2: Change title list
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+About 12 hours including the time of research.
+
 2. What was the most rewarding challenge you conquered?
+The implementation of the filter by type.
+
 3. What two additional features did you build? Why?
+I think that we can add many features to this project but this two are essential
+update item's priority and change the title list. Change the title list only require
+change :title from attr_reader to attr_accessor on the UdaciList class!
+
 4. Where do you still have room to grow?
+I need a lot of practice to be more faster.
