@@ -30,12 +30,19 @@ class UdaciList
   end
 
   def all
-    puts "-" * @title.to_s.length
-    puts @title
-    puts "-" * @title.to_s.length
-    @items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
+    table = filter_for_table(@items)
+    puts table
+  end
+
+  # For Gem Terminal Table
+  def filter_for_table(list)
+    rows = []
+    list.each_with_index do |item, position|
+      rows << [position + 1, item.details]
     end
+    Terminal::Table.new :title => @title,
+    :headings => ["Num", "Details"],
+    :rows => rows
   end
 
   # Filter by item type
@@ -55,12 +62,8 @@ class UdaciList
 
   # Print the filtered items
   def return_filter(filtered_items)
-    puts "-" * @title.to_s.length
-    puts (@title)
-    puts "-" * @title.to_s.length
-    filtered_items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
-    end
+    table = filter_for_table(@items)
+    puts table
   end
 
   # Add change priority module
