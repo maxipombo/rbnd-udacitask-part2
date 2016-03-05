@@ -9,15 +9,11 @@ class UdaciList
 
   def add(type, description, options={})
     type = type.downcase
-    case type
-    when "todo"
-      @items.push TodoItem.new(description, options)
-    when "event"
-      @items.push EventItem.new(description, options)
-    when "link"
-      @items.push LinkItem.new(description, options)
-    else # The ItemType could be only 'todo', 'event' or 'link'
-      raise UdaciListErrors::InvalidItemType, "Try 'todo', 'event' or 'link'"
+    allowed_types = { todo: TodoItem, link: LinkItem, event: EventItem }
+    if allowed_types.keys.include? type.to_sym
+      @items.push allowed_types[type.to_sym].new description, options
+    else
+      raise UdaciListErrors::InvalidItemType, "#{type} type doesn't exist".red
     end
   end
 
